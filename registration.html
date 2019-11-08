@@ -56,7 +56,8 @@
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<a class="navbar-brand logo_h" href="index.html">
-						<img src="img/logo.png" alt="">
+						<!-- <img src="img/logo.png" alt=""> -->
+						<i>DaFlower</i>
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 					 aria-expanded="false" aria-label="Toggle navigation">
@@ -197,18 +198,22 @@
 				<div class="col-lg-6">
 					<div class="login_form_inner reg_form">
 						<h3>Create an Account</h3>
-						<form class="row login_form" action=""contact_process.php method="post" id="contactForm" novalidate="novalidate" checkInput()>
+						<form class="row login_form" action="contact_process.php" method="POST" id="contactForm" onsubmit="return myfun()">
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="input-name" name="name" placeholder="Name" oninput="checkInput()">
+								<input type="text" class="form-control" id="input-name" name="name" placeholder="Name" value="">
+								<span id="messages" style="color:red"></span>
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="email" class="form-control" id="input-mail" name="email" placeholder="Email Address" oninput="checkInput()">
+								<input type="email" class="form-control" id="input-mail" name="email" placeholder="Email Address" value="" >
+								<span id="msg" style="color:red"></span>
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="password" class="form-control" id="input-password" name="password" placeholder="Password" onnput="checkInput()">
+								<input type="password" class="form-control" id="input-password" name="password" placeholder="Password" value="">
+								<span id="pass" style="color:red"></span>
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="password" class="form-control" id="input-confirmpassword" name="pass" placeholder="Confirm password" oninput="checkInput()">
+								<input type="password" class="form-control" id="input-confirmpassword" name="confirmpassword" placeholder="Confirm password">
+								<span id="passw" style="color:red"></span>
 							</div>
 							<div class="col-md-12 form-group">
 								<div class="creat_account">
@@ -338,7 +343,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="vendors/counter-up/jquery.waypoints.min.js"></script>
 	<script src="vendors/counter-up/jquery.counterup.js"></script>
 	<script src="js/theme.js"></script>
-
 	<script src="js/main.js"></script>
 </body>
 

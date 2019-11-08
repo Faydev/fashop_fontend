@@ -413,7 +413,7 @@ a {
 /* Home Banner Area css
 ============================================================================================ */
 .home_banner_area {
-  background: url(../img/banner/banner-bg.jpg) no-repeat center bottom;
+  background: url(../img/flcup.webp) no-repeat center bottom;
   position: relative;
   z-index: 1;
   min-height: 900px; }
@@ -459,6 +459,8 @@ a {
         box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1); }
       .home_banner_area .banner_inner .banner_content .halemet_img {
         text-align: right; }
+
+
 
 .blog_banner {
   min-height: 780px;

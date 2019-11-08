@@ -1,0 +1,328 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="container">
+			<div class="row">
+				<h1 class="text-center">Interactive form validation using bootstrap</h1>
+				<form id="form1" action="" method="post" name="form1" class="form-horizontal" role="form" style="margin:10px 0 10px 0">
+					<div id="grpfirstName" class="form-group">
+						<label for="firstName" class="col-sm-2 control-label"><span class="text-danger">* </span>First Name</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+						   <span id="firstNameIcon"  class=""></span>
+						   <div id="firstNameErrorMsg" class="text-danger"></div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="lastName" class="col-sm-2 control-label">Last Name</label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+						</div>
+					</div>
+					
+					<div id="grpEmail" class="form-group">
+						<label for="lastName" class="col-sm-2 control-label"><span class="text-danger">* </span>Email </label>
+						<div class="col-sm-10">
+						  <input type="email" class="form-control" id="email" placeholder="Enter email">
+						   <span id="EmailIcon"  class=""></span>
+						     <div id="emailErrorMsg" class="text-danger"></div>
+						</div>
+					</div>
+					
+					<div id="grpCellPhone" class="form-group">
+						<label for="lastName" class="col-sm-2 control-label"><span class="text-danger">* </span>Cell Phone </label>
+						<div class="col-sm-10">
+						  <input type="text" class="form-control" id="cellPhone" placeholder="Enter Mobile number">
+						   <span id="cellPhoneIcon"  class=""></span>
+						     <div id="cellPhoneErrorMsg" class="text-danger"></div>
+						</div>
+					</div>
+					
+					<div class="form-group" id="grpAddress">
+						<label for="address" class="col-sm-2 control-label"><span class="text-danger">* </span>Address </label>
+						<div class="col-sm-10">
+							<textarea id="address" class="form-control"></textarea>
+							 <span id="addressIcon"  class=""></span>
+							 <div id="addressErrorMsg" class="text-danger"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+						  <button type="submit" class="btn btn-success">Save</button>
+						</div>
+					</div>
+			
+		</form>
+			</div> <!-- End of row -->
+		</div> <!-- End of container -->
+
+
+// I have done a better way to do form validation using bootstrap. You can take a look at my codepen http://codepen.io/abhilashn/pen/bgpGRw
+
+// var g_UnFocusElementStyle = "";
+// var g_FocusBackColor = "#FFC";
+// var g_reEmail = /^[\w\.=-]+\@[\w\.-]+.[a-z]{2,4}$/;
+// var g_reCell = /^\d{10}$/;
+// var g_invalidFields = 0;
+
+// function initFormElements(sValidElems) {
+// 	var inputElems = document.getElementsByTagName('textarea');
+// 	for(var i = 0; i < inputElems.length; i++) {
+// 		com_abhi.EVENTS.addEventHandler(inputElems[i], 'focus', highlightFormElement, false);
+// 		com_abhi.EVENTS.addEventHandler(inputElems[i], 'blur', unHightlightFormElement, false);
+// 	}
+// 	/* Add the code for the input elements */
+// 	inputElems = document.getElementsByTagName('input');
+// 	for(var i = 0; i < inputElems.length; i++) {
+// 		if(sValidElems.indexOf(inputElems[i].getAttribute('type') != -1)) {
+// 			com_abhi.EVENTS.addEventHandler(inputElems[i], 'focus', highlightFormElement, false);
+// 			com_abhi.EVENTS.addEventHandler(inputElems[i], 'blur', unHightlightFormElement, false);
+// 		}
+// 	}
+	
+// 	/* submit handler */
+	
+	
+// 	com_abhi.EVENTS.addEventHandler(document.getElementById('form1'), 'submit' , validateAllfields, false);
+	
+// 	/* Add the default focus handler */
+// 	document.getElementsByTagName('input')[0].focus();
+	
+// 	/* Add the event handlers for validation */
+// 	com_abhi.EVENTS.addEventHandler(document.forms[0].firstName, 'blur', validateFirstName, false);
+// 	com_abhi.EVENTS.addEventHandler(document.forms[0].email, 'blur', validateEmailAddress, false);
+// 	com_abhi.EVENTS.addEventHandler(document.forms[0].address, 'blur', validateAddress, false);
+// 	com_abhi.EVENTS.addEventHandler(document.forms[0].cellPhone, 'blur', validateCellPhone, false);
+// }
+
+// function highlightFormElement(evt) {
+// 	var elem = com_abhi.EVENTS.getEventTarget(evt);
+// 	if(elem != null) {
+// 		elem.style.backgroundColor = g_FocusBackColor;
+// 	}
+// }
+
+// function unHightlightFormElement(evt) {
+// 	var elem = com_abhi.EVENTS.getEventTarget(evt);
+// 	if(elem != null) {
+// 		elem.style.backgroundColor = "";
+// 	}
+// }
+
+// function validateAddress() {
+// 	var formField = document.getElementById('address');
+// 	var ok = (formField.value != null && formField.value.length != 0);
+// 	var grpEle = document.getElementById('grpAddress');
+// 	if(grpEle != null) {
+// 		if(ok) {
+// 			grpEle.className = "form-group has-success has-feedback";
+// 			document.getElementById('addressIcon').className = "glyphicon glyphicon-ok form-control-feedback";
+// 			document.getElementById('addressErrorMsg').innerHTML = "";
+// 		}
+// 		else  {
+// 			grpEle.className = "form-group has-error has-feedback";
+// 			document.getElementById('addressIcon').className = "glyphicon glyphicon-remove form-control-feedback";
+// 			document.getElementById('addressErrorMsg').innerHTML = "Please enter your address";
+// 		}
+// 		return ok;
+// 	}
+	
+// }
+
+// function validateFirstName() {
+// 	var formField = document.getElementById('firstName');
+// 	var ok = (formField.value != null && formField.value.length != 0);
+// 	var grpEle = document.getElementById('grpfirstName');
+// 	if(grpEle != null) {
+// 		if(ok) {
+// 			grpEle.className = "form-group has-success has-feedback";
+// 			document.getElementById('firstNameIcon').className = "glyphicon glyphicon-ok form-control-feedback";
+// 			document.getElementById('firstNameErrorMsg').innerHTML = "";
+// 		}
+// 		else  {
+// 			grpEle.className = "form-group has-error has-feedback";
+// 			document.getElementById('firstNameIcon').className = "glyphicon glyphicon-remove form-control-feedback";
+// 			document.getElementById('firstNameErrorMsg').innerHTML = "Please enter your first name";
+// 		}
+// 		return ok;
+// 	}
+// }
+
+// function validateEmailAddress() {
+// 	var formField = document.getElementById('email');
+// 	var ok = (formField.value.length != 0 && g_reEmail.test(formField.value));
+// 	var grpEle = document.getElementById('grpEmail');
+// 	if(grpEle != null) {
+// 		if(ok) {
+// 			grpEle.className = "form-group has-success has-feedback";
+// 			document.getElementById('EmailIcon').className = "glyphicon glyphicon-ok form-control-feedback";
+// 			document.getElementById('emailErrorMsg').innerHTML = "";
+// 		}
+// 		else {
+// 			grpEle.className = "form-group has-error has-feedback";
+// 			document.getElementById('EmailIcon').className = "glyphicon glyphicon-remove form-control-feedback";
+// 			document.getElementById('emailErrorMsg').innerHTML = "Please enter your valid email id";
+// 		}
+// 	}
+// 	return ok;
+// }
+
+// function validateCellPhone() {
+// 	var formField = document.getElementById('cellPhone');
+// 	var ok = (formField.value.length != 0 && g_reCell.test(formField.value));
+// 	var grpEle = document.getElementById('grpCellPhone');
+// 	if(grpEle != null) {
+// 		if(ok) {
+// 			grpEle.className = "form-group has-success has-feedback";
+// 			document.getElementById('cellPhoneIcon').className = "glyphicon glyphicon-ok form-control-feedback";
+// 			document.getElementById('cellPhoneErrorMsg').innerHTML = "";
+// 		}
+// 		else {
+// 			grpEle.className = "form-group has-error has-feedback";
+// 			document.getElementById('cellPhoneIcon').className = "glyphicon glyphicon-remove form-control-feedback";
+// 			document.getElementById('cellPhoneErrorMsg').innerHTML = "Please enter your valid mobile number";
+// 		}
+// 	}
+// 	return ok;
+// }
+
+
+
+// function validateAllfields(e) {
+// 	/* Need to do it this way to make sure all the functions execute */
+	
+// 	var bOK = validateFirstName();
+// 	bOK &= validateEmailAddress();
+// 	bOK &= validateCellPhone(); 
+// 	bOK &= validateAddress(); 
+	
+
+// 	if(!bOK) {
+// 		alert("The fields that are marked bold and red are required. Please supply valid\n values for these fields before sending.");
+// 		com_abhi.EVENTS.preventDefault(e);
+// 	}
+	
+	
+// }
+
+// com_abhi.EVENTS.addEventHandler(window, "load", function() { initFormElements("text"); }, false
+
+
+
+
+
+// $(document).ready(function(){
+    
+//   (function($) {
+//       "use strict";
+
+  
+//   jQuery.validator.addMethod('answercheck', function (value, element) {
+//       return this.optional(element) || /^\bcat\b$/.test(value)
+//   }, "type the correct answer -_-");
+
+//   // validate registration
+//   $(function() {
+//       $('#registrationForm').validate({
+//           rules: {
+//               name: {
+//                   required: true,
+//                   minlength: 5
+//               },
+
+//               email: {
+//                 required: true,
+//                 email: true
+//             },
+
+//               password: {
+//                   required: true,
+//                   minlength: 4
+//               },
+
+//               confirmpassword: {
+//                   required: true,
+//                   minlength: 5
+//               },
+          
+            
+//           },
+//           messages: {
+//               name: {
+//                   required: "oops! did you forget your name...?",
+//                   minlength: "your name must consist of at least 5 characters"
+//               },
+
+//               email: {
+//                 required: "oops! you have an email right...? "
+//             },
+//               password: {
+//                   required: "oops! password please...?",
+//                   minlength: "password must have at least 4 characters, a number or underscore"
+//               },
+//               confirmpassword: {
+//                   required: "please confirm password...",
+//                   minlength: "oops! password does not match"
+//               },
+             
+//           },
+//           submitHandler: function(form) {
+//               $(form).ajaxSubmit({
+//                   type:"GET",
+//                   data: $(form).serialize(),
+//                   url:"contact_process.php",
+//                   success: function() {
+//                       $('#registrationForm :input').attr('', '');
+//                       $('#registrationForm').fadeTo( "slow", 1, function() {
+//                           $(this).find(':input').attr('', '');
+//                           $(this).find('label').css('cursor','default');
+//                           $('#success').fadeIn()
+//                           $('.modal').modal('hide');
+//                     $('#success').modal('show');
+//                       })
+//                   },
+//                   error: function() {
+//                       $('#registrationForm').fadeTo( "slow", 1, function() {
+//                           $('#error').fadeIn()
+//                           $('.modal').modal('hide');
+//                     $('#error').modal('show');
+//                       })
+//                   }
+//               })
+//           }
+//       })
+//   })
+      
+// })(jQuery)
+// })
+
+
+
+
+
+// // "use strict";
+
+// // var Validator = function(validationCall, errorCallBack) {
+// //   this.validate = function() {https://www.youtube.com/watch?v=PAUxi3f9HBhttps://www.youtube.com/watch?v=PAUxi3f9HB0&t=23s0&t=23s
+// //     if (!validationCall()) {
+// //       return errorCallBack();
+// //     }
+// //   };
+// // };
+
+// // function AccountFormValidation() {
+// //   this.fieldValidators = {};
+// //   this.addField = function(fieldName) {
+// //     this.fieldValidators[fieldName] = [];
+// //   };
+// //   this.addValidationToField = function(fieldName, validator) {
+// //     if (this.fieldValidators[fieldName] == null) {
+// //       this.addField(fieldName);
+// //     } else {
+// //       this.fieldValidators[fieldName].push(validator);
+// //     }
+// //   };
+// // }
+// // this.validator.addMethod('answercheck', function (value, element) {
+// //   return this.optional(element) || /^\bcat\b$/.test(value)https://www.youtube.com/watch?v=PAUxi3f9HB0&t=23https://www.youtube.com/watch?v=PAUxi3f9HB0&t=23ss
+// // }, "type the correct answer -_-");
