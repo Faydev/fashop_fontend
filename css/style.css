@@ -4368,3 +4368,17 @@ h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+
+/* display carousel on mobile */
+.mobile-carousel {
+  display: -ms-flexbox;
+  display: contents;
+  -ms-flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+  .mobile-carousel {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+  }
+}
