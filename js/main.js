@@ -1,41 +1,64 @@
 function myfun() {
+  var inputName = document.getElementById("input-name").value;
+  var inputMail = document.getElementById("input-mail").value;
+  var inputPassword = document.getElementById("input-password").value;
+  var inputConfirmpassword = document.getElementById("input-confirmpassword")
+    .value;
+  var button = document.querySelector(".btn");
 
-var inputName = document.getElementById('input-name').value;
-var inputMail = document.getElementById('input-mail').value;
-var inputPassword = document.getElementById('input-password').value;
-var inputConfirmpassword = document.getElementById('input-confirmpassword').value;
-var button = document.querySelector('.btn');
-
-if (inputPassword =='') {
-    document.getElementById('pass').innerHTML = 'oops! please your password...'
+  if (inputPassword == "") {
+    document.getElementById("pass").innerHTML = "oops! please your password...";
     return false;
   }
 
-if (inputPassword.length < 4) {
-    document.getElementById('pass').innerHTML = 'password must be greater than 4 characters...'
+  if (inputPassword.length < 4) {
+    document.getElementById("pass").innerHTML =
+      "password must be greater than 4 characters...";
     return false;
   }
 
   if (inputPassword.length > 10) {
-    document.getElementById('pass').innerHTML = 'password must not be greater than 10 characters...'
+    document.getElementById("pass").innerHTML =
+      "password must not be greater than 10 characters...";
     return false;
   }
 
   if (inputPassword !== inputConfirmpassword) {
-      document.getElementById('passw').innerHTML = 'oops! password does not match...'
-      return false;
-    }
-  
-  if (inputName ==''){
-    document.getElementById('messages').innerHTML = 'oops! your name please...?'
+    document.getElementById("passw").innerHTML =
+      "oops! password does not match...";
     return false;
   }
 
-  if (inputMail =='') {
-    document.getElementById('msg').innerHTML = 'oops! you too have an email...'
+  if (inputName == "") {
+    document.getElementById("messages").innerHTML =
+      "oops! your name please...?";
     return false;
   }
 
-  
+  if (inputMail == "") {
+    document.getElementById("msg").innerHTML = "oops! you too have an email...";
+    return false;
+  }
 }
-  
+
+function showSearch() {
+  $(".search-modal").show();
+}
+
+function hideSearch() {
+  $(".search-modal").hide();
+}
+
+$(".search-icon").click(function() {
+  showSearch();
+});
+
+$(".closer-icon").click(function() {
+  hideSearch();
+});
+
+$(document).keyup(function(e) {
+  if (e.key === "Escape") {
+    hideSearch();
+  }
+});
