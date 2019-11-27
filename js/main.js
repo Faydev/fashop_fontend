@@ -41,21 +41,45 @@ function myfun() {
   }
 }
 
-function showSearch() {
-  $(".search-modal").show();
-}
+// function popover (){
+//   $("#popover").show();
+// }
 
-function hideSearch() {
-  $(".search-modal").hide();
-}
+// function hideSearch (){
+//   $("#popover").hide();
+// }
 
-$(".search-icon").click(function() {
-  showSearch();
-});
+// $(".search-icon").click(function() {
+//   showSearch();
+// })
 
-$(".closer-icon").click(function() {
-  hideSearch();
-});
+// $(document).keyup(function(e) {
+//   if (e.key === "Escape") {
+//     hideSearch();
+//   }
+// })
+
+
+
+  $("[data-toggle='popover']").popover();
+  
+
+
+// function showSearch() {
+//   $(".popover").show();
+// }
+
+// function hideSearch() {
+//   $(".popover").hide();
+// }
+
+// $(".search-icon").click(function() {
+//   showSearch();
+// });
+
+// $(".closer-icon").click(function() {
+//   hideSearch();
+// });
 
 $(document).keyup(function(e) {
   if (e.key === "Escape") {
